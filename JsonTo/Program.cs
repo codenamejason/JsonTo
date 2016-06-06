@@ -18,9 +18,9 @@ namespace JsonTo
                 string url = "https://json-csv.com/api/getcsv";
                 var content = new FormUrlEncodedContent(new[]
                 {
-            new System.Collections.Generic.KeyValuePair("email", email),
-            new System.Collections.Generic.KeyValuePair("json", json),
-        });
+                    new System.Collections.Generic.KeyValuePair("email", email),
+                    new System.Collections.Generic.KeyValuePair("json", json),
+                });
                 var result = client.PostAsync(url, content).Result;
                 string csvContent = result.Content.ReadAsStringAsync().Result;
                 Response.Write(csvContent);
